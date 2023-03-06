@@ -24,9 +24,9 @@ Global VSCode Setup
 Extensions
 ==========
 
-See inside the `/template/` directory in this directory for an `extension.json` file. If this file is placed in your projects `.vscode` folder, the project will have my extensions as recommendations.
+See inside the `.vscode` directory in this directory.
 
-You can also manually search the VSCode store for the extension identifiers listed in that JSON document to install them manually.
+WRITE MORE HERE.
 
 Starting a New Project
 ======================
