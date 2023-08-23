@@ -4,7 +4,7 @@ import collections.abc
 import httpx
 
 
-async def get_pokemon_names(start: int, end: int) -> collections.abc.AsyncGenerator:
+async def get_pokemon_names(start: int, end: int) -> collections.abc.AsyncGenerator[str, None]:
     """A generator of all pokemon names in the given range of pokemon ids
 
     Args:

@@ -43,7 +43,7 @@ flit install
 ## My developer workflow
 
 1. Use vscode tools while developing, running tests out of vscode.
-1. View the "problems" tab. 
+1. View the "problems" tab.
 1. When ready to commit, I run `tox` from the command line.
 1. If `tox` returns no errors, I can commit and push.
 1. I can then verify github actions produces no errors on that push.  
