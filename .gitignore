@@ -154,7 +154,7 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# You may want to add IDE things into git, but you should turn this
-# on intentionally.
-.vscode/
-.idea/
+# IDE stuff
+
+#.vscode/
+#.idea/
