@@ -4,6 +4,8 @@ This is a highly opininated guide on how to setup VScode for Python Development 
 
 This doesn't mean I am correct, or someone with other preferences is incorrect, but this is what works for me.
 
+Note this only works for pure Python projects. If your project requires C extensions or rust code, you will need to replace the flit builder with one that supports those things.
+
 ## What is included in this skeleton
 
 1. My vscode setup for Python, including what plugins I use (in `.vscode/settings.json`)
@@ -164,6 +166,21 @@ You can click on it to view the logs and see what tests have passed, or what tes
 ## Docstrings
 
 See [arithmetic.py](src/python_vscode_template/arithmetic.py) for example docstrings. These are in [Google Docstring Format](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
+
+## Dist
+
+`flit build` will put two files in the `dist/` directory. A source file and a wheel. Both of these are directly usable by pip to install.
+
+## Publishing docs to Github pages.
+
+You can do this with `mkdocs gh-pages`. This will push the documentation in `site/` to a github page.
+You will get the URL to it from the command.
+
+## Uploading to pypi
+
+FIXME: Write this up
+
+
 
 ## My Global VSCode Settings
 
