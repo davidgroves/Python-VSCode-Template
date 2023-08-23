@@ -103,8 +103,7 @@ plugins: asyncio-0.21.1, anyio-3.7.1, cov-4.1.0
 asyncio: mode=Mode.STRICT
 collected 1 item                                                                                                                      
 
-src/python_vscode_template/arithmetic.py .                                                                                      [100%]
-
+src/python_vscode_template/arithmetic.py .                                                [100%]                                          
 ====================================== 1 passed in 0.03s =======================================
 ```
 
