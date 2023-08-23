@@ -9,14 +9,13 @@ Note this only works for pure Python projects. If your project requires C extens
 ## What is included in this skeleton
 
 1. My vscode setup for Python, including what plugins I use (in `.vscode/settings.json`)
-1. Examples for automated formatting with [black](https://black.readthedocs.io/en/stable/) and [isort](https://pycqa.github.io/isort/).
-1. Examples for automated testing with [pytest](https://docs.pytest.org/).
-1. Examples for automatically testing the documentation examples with pytest.
-1. Examples for automated documentation building with [mkdocs](https://www.mkdocs.org/)
-1. Examples for automatic linting with [pylint](https://pypi.org/project/pylint/)
-1. Examples for automatic type checking with [mypy](https://mypy.readthedocs.io/en/stable/)
-1. Examples for automatic testing in multiple environments with [tox](https://tox.wiki/)
-1. Examples for [Github Actions](https://github.com/features/actions) automation for running your tox test suite.
+1. Automatic Formatting with [black](https://black.readthedocs.io/en/stable/) and [isort](https://pycqa.github.io/isort/).
+1. Testing with [pytest](https://docs.pytest.org/) (including documentation testing)
+1. Documentation building with [mkdocs](https://www.mkdocs.org/)
+1. Linting with [pylint](https://pypi.org/project/pylint/)
+1. Static type checking with [mypy](https://mypy.readthedocs.io/en/stable/)
+1. Automatic testing in multiple environments with [tox](https://tox.wiki/)
+1. Examples for [Github Actions](https://github.com/features/actions) automation for running your tox test suite on commit.
 
 ## Software you need
 
@@ -34,6 +33,7 @@ Note on Debian/Ubuntu based distributions, you will need to `apt-get install pyt
 - Make a venv with `python -m venv .venv`.
 - Update the `LICENSE` file with your appropriate license information.
 - Replace this `README.md` file with an appropriate readme file.
+- Make a `~/.pypirc` file in your homedirectory, based off [.pypirc-template](.pypirc-template)
 
 You then need to install the development dependancies, and then the package in installable mode.
 
@@ -42,13 +42,27 @@ pip install -r requirements-dev.txt
 flit install
 ```
 
+## Stuff you will need to edit in your own projects.
+
+- [tox.ini](tox.ini): Make sure `envlist` contains the versions of Python you want to test again. This example inclujdes
+- [requirements-dev.txt](requirements-dev.txt): Make sure this includes any developer only dependancies.
+- [requirements.txt](requirements.txt): This should contain dependancies required to run the application or library. If you are making an application, you should pin each package to a specific version. If you are making a library, you should accept the minimum required version to allow users more choice. A library with a pinned version FORCES the user to install that version too, and is likely to clash with other libraries.
+- [docs/](docs/): The entry document is index.md, but you should write the docs as you see fit.
+- [src/](src/): Update this with your package name.
+- [tests/](tests/): This is where to write your tests. Files must start `test_` to be picked up by tests/
+
+
 ## My developer workflow
 
-1. Use vscode tools while developing, running tests out of vscode.
-1. View the "problems" tab.
+1. Use vscode tools while developing, [running tests out of vscode](#testing-from-within-vscode).
+1. View the "problems" tab for things the linter has caught.
 1. When ready to commit, I run `tox` from the command line.
 1. If `tox` returns no errors, I can commit and push.
-1. I can then verify github actions produces no errors on that push.  
+1. I can then verify github actions produces no errors on that push.
+1. If I am publishing to pypi, I then run `flit --publish prodpypi`  
+
+
+## Stuff you can do
 
 ### Use the package. It is fully installed and usable
 
@@ -136,7 +150,7 @@ tox
 
 ***
 
-## From within vscode
+### Testing From within vscode
 
 You can verify the tests using the testing flask icon on the left.
 
@@ -146,7 +160,7 @@ You can verify the tests using the testing flask icon on the left.
 
 ![vscode testing example](images/vscode_testing.png "VSCode Testing Example")
 
-## On github
+### On commit hooks on github.
 
 A small icon will have been added to github by github actions. It will be a ✅ if the tests are passing, a ❌ if they are failing and a 🟤 if the tests are still running.
 
@@ -154,29 +168,12 @@ You can click on it to view the logs and see what tests have passed, or what tes
 
 ![github tests example](images/github_tests_passing.png "Github Tests Passing")
 
-## Stuff you will need to edit
-
-- [tox.ini](tox.ini): Make sure `envlist` contains the versions of Python you want to test again. This example inclujdes
-- [requirements-dev.txt](requirements-dev.txt): Make sure this includes any developer only dependancies.
-- [requirements.txt](requirements.txt): This should contain dependancies required to run the application or library. If you are making an application, you should pin each package to a specific version. If you are making a library, you should accept the minimum required version to allow users more choice. A library with a pinned version FORCES the user to install that version too, and is likely to clash with other libraries.
-- [docs/](docs/): The entry document is index.md, but you should write the docs as you see fit.
-- [src/](src/): Update this with your package name.
-- [tests/](tests/): This is where to write your tests. Files must start `test_` to be picked up by tests/
-
-## Docstrings
-
-See [arithmetic.py](src/python_vscode_template/arithmetic.py) for example docstrings. These are in [Google Docstring Format](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
-
-## Dist
-
-`flit build` will put two files in the `dist/` directory. A source file and a wheel. Both of these are directly usable by pip to install.
-
-## Publishing docs to Github pages
+### Publishing docs to Github pages
 
 You can do this with `mkdocs gh-pages`. This will push the documentation in `site/` to a github page.
 You will get the URL to it from the command.
 
-## Uploading to pypi
+### Uploading to pypi
 
 If you have never done this before, you need to make an account at [Pypi](https://pypi.org/).
 Then in [Pypi - Manage Accounts](https://pypi.org/manage/account/), add 2FA and an API token.
@@ -190,6 +187,18 @@ To upload to pypi, make sure your git repo and working directory are up to date,
 If you publish to test and want to use it, from another virtual environment, do `pip install --index-url https://test.pypi.org/simple/ python_vscode_template`, or of course just `pip install python_vscode_template`.
 
 The name of the package is decided by what is in [pyproject.toml](pyproject.toml), in the `[project]`, `name=` key.
+
+---
+
+## Misc Notes
+
+### Docstrings
+
+See [arithmetic.py](src/python_vscode_template/arithmetic.py) for example docstrings. These are in [Google Docstring Format](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
+
+### Dist
+
+`flit build` will put two files in the `dist/` directory. A source file and a wheel. Both of these are directly usable by pip to install.
 
 ## My Global VSCode Settings
 
