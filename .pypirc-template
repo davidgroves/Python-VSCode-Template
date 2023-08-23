@@ -1,3 +1,20 @@
-[pypi]
-  username = __token__
-  password = pypi-TOKENGOESHERE
+# This needs to go in your home directory.
+# Not in your project directory !
+
+# The username is literally __token__ if you are using a token,
+# don't replace this with your username, it will not work !
+
+[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[prodpypi]
+repository = https://upload.pypi.org/legacy/
+username = __token__
+password = pypi-TOKENGOESHERE
+
+[testpypi]
+repository = https://test.pypi.org/legacy/
+username = __token__
+password = pypi-TOKENGOESHERE

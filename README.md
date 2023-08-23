@@ -179,9 +179,17 @@ You will get the URL to it from the command.
 ## Uploading to pypi
 
 If you have never done this before, you need to make an account at [Pypi](https://pypi.org/).
-Then in [Pypi - Manage Accounts](https://pypi.org/manage/account/), add an API token.
+Then in [Pypi - Manage Accounts](https://pypi.org/manage/account/), add 2FA and an API token.
 
+Then repeat this for [TestPypi](https://test.pypi.org/) and [TestPypi - Manage Accounts](https://test.pypi.org/manage/account), add 2FA and a API token.
 
+Then edit `.pypirc` in your home directory, and make it similar to [.pypirc-template](.pypirc-template) in this repo, except with the appropriate tokens.
+
+To upload to pypi, make sure your git repo and working directory are up to date, and run `flit publish --repository prodpypi` or `flit pubish --repository testprod` as required. Running without `--repository` will specifically not work. This is done to make you select where to upload to.
+
+If you publish to test and want to use it, from another virtual environment, do `pip install --index-url https://test.pypi.org/simple/ python_vscode_template`, or of course just `pip install python_vscode_template`.
+
+The name of the package is decided by what is in [pyproject.toml](pyproject.toml), in the `[project]`, `name=` key.
 
 ## My Global VSCode Settings
 
