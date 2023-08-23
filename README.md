@@ -171,14 +171,15 @@ See [arithmetic.py](src/python_vscode_template/arithmetic.py) for example docstr
 
 `flit build` will put two files in the `dist/` directory. A source file and a wheel. Both of these are directly usable by pip to install.
 
-## Publishing docs to Github pages.
+## Publishing docs to Github pages
 
 You can do this with `mkdocs gh-pages`. This will push the documentation in `site/` to a github page.
 You will get the URL to it from the command.
 
 ## Uploading to pypi
 
-FIXME: Write this up
+If you have never done this before, you need to make an account at [Pypi](https://pypi.org/).
+Then in [Pypi - Manage Accounts](https://pypi.org/manage/account/), add an API token.
 
 
 
