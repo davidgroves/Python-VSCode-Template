@@ -23,6 +23,7 @@
         "oderwat.indent-rainbow",
         "bierner.emojisense",
         "hashicorp.terraform",
-        "adamcowley.neo4j-vscode"
+        "adamcowley.neo4j-vscode",
+        "bierner.github-markdown-preview"
     ]
 }
