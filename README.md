@@ -59,7 +59,7 @@ flit install
 
 ## Stuff you will need to edit in your own projects.
 
-- [tox.ini](tox.ini): Make sure `envlist` contains the versions of Python you want to test again. This example inclujdes
+- [tox.ini](tox.ini): Make sure `envlist` contains the versions of Python you want to test again. This example includes
 - [requirements-dev.txt](requirements-dev.txt): Make sure this includes any developer only dependancies.
 - [requirements.txt](requirements.txt): This should contain dependancies required to run the application or library. If you are making an application, you should pin each package to a specific version. If you are making a library, you should accept the minimum required version to allow users more choice. A library with a pinned version FORCES the user to install that version too, and is likely to clash with other libraries.
 - [docs/](docs/): The entry document is index.md, but you should write the docs as you see fit.
