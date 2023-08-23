@@ -14,6 +14,7 @@ This doesn't mean I am correct, or someone with other preferences is incorrect, 
 1. Examples for automatic linting with [pylint](https://pypi.org/project/pylint/)
 1. Examples for automatic type checking with [mypy](https://mypy.readthedocs.io/en/stable/)
 1. Examples for automatic testing in multiple environments with [tox](https://tox.wiki/)
+1. Examples for [Github Actions](https://github.com/features/actions) automation for running your tox test suite.
 
 ## Software you need
 
@@ -101,7 +102,6 @@ src/python_vscode_template/arithmetic.py .                                      
 ====================================== 1 passed in 0.03s =======================================
 ```
 
-
 ### Verify the type checking
 
 ```console
@@ -128,6 +128,20 @@ tox
 ```
 
 ***
+
+## From within vscode
+
+You can verify the tests using the testing flask icon on the left. It has buttons to rediscover your tests, run all tests, run specific test or tests, and to debug you tests.
+
+![vscode testing example](images/vscode_testing.png "VSCode Testing Example")
+
+## On github
+
+A small icon will have been added to github by github actions. It will be a ✅ if the tests are passing, a ❌ if they are failing and a 🟤 if the tests are still running.
+
+You can click on it to view the logs and see what tests have passed, or what tests are still running.
+
+![github tests example](images/github_tests_passing.png "Github Tests Passing")
 
 ## Stuff you will need to edit
 
