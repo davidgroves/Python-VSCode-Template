@@ -6,6 +6,21 @@ This doesn't mean I am correct, or someone with other preferences is incorrect, 
 
 Note this only works for pure Python projects. If your project requires C extensions or rust code, you will need to replace the flit builder with one that supports those things.
 
+## The application
+
+The application itself is a useless script called `my_script`, which is installed as a script. It adds two integers together that are given on the command line.
+
+```console
+$ my_script 2 3
+5
+```
+
+There are also tests that use the Pokemon API to get pokemon by id.
+
+FIXME: Add a script that uses that as well for better demoing.
+
+This application can be installed with `pip install python_vscode_template`, but the point of this repository is to show you how that application was created, tested, packaged and distributed, not the actual application itself.
+
 ## What is included in this skeleton
 
 1. My vscode setup for Python, including what plugins I use (in `.vscode/settings.json`)
