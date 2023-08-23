@@ -86,7 +86,20 @@ tests/test_pokemon.py .                                                         
 
 ### Verify the documentation tests (from the command line)
 
+```console
+$ pytest --doctest-modules src/
+====================================== test session starts ======================================
+platform linux -- Python 3.11.4, pytest-7.4.0, pluggy-1.2.0
+rootdir: /home/dwg/CODE/Python-VSCode-Template
+configfile: pyproject.toml
+plugins: asyncio-0.21.1, anyio-3.7.1, cov-4.1.0
+asyncio: mode=Mode.STRICT
+collected 1 item                                                                                                                      
 
+src/python_vscode_template/arithmetic.py .                                                                                      [100%]
+
+====================================== 1 passed in 0.03s =======================================
+```
 
 
 ### Verify the type checking
