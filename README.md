@@ -40,7 +40,13 @@ pip install -r requirements-dev.txt
 flit install
 ```
 
-## How to use as a developer
+## My developer workflow
+
+1. Use vscode tools while developing, running tests out of vscode.
+1. View the "problems" tab. 
+1. When ready to commit, I run `tox` from the command line.
+1. If `tox` returns no errors, I can commit and push.
+1. I can then verify github actions produces no errors on that push.  
 
 ### Use the package. It is fully installed and usable
 
@@ -131,7 +137,11 @@ tox
 
 ## From within vscode
 
-You can verify the tests using the testing flask icon on the left. It has buttons to rediscover your tests, run all tests, run specific test or tests, and to debug you tests.
+You can verify the tests using the testing flask icon on the left.
+
+1. Brings up the testing dialog.
+2. Can run or debug individual tests, by selecting them and using the icons.
+3. Can rediscover, run all tests or debug all tests.
 
 ![vscode testing example](images/vscode_testing.png "VSCode Testing Example")
 
@@ -145,12 +155,12 @@ You can click on it to view the logs and see what tests have passed, or what tes
 
 ## Stuff you will need to edit
 
-- `tox.ini`: Make sure `envlist` contains the versions of Python you want to test again. This example inclujdes
-- `requirements-dev.txt`: Make sure this includes any developer only dependancies.
-- `requirements.txt`: This should contain dependancies required to run the application or library. If you are making an application, you should pin each package to a specific version. If you are making a library, you should accept the minimum required version to allow users more choice. A library with a pinned version FORCES the user to install that version too, and is likely to clash with other libraries.
-- `docs/`: The entry document is index.md, but you should write the docs as you see fit.
-- `src/YOURPACKAGENAME`: This is where you will put the actual code you write
-- `tests/`: This is where to write your tests. Files must start `test_` to be picked up by tests/
+- [tox.ini](tox.ini): Make sure `envlist` contains the versions of Python you want to test again. This example inclujdes
+- [requirements-dev.txt](requirements-dev.txt): Make sure this includes any developer only dependancies.
+- [requirements.txt](requirements.txt): This should contain dependancies required to run the application or library. If you are making an application, you should pin each package to a specific version. If you are making a library, you should accept the minimum required version to allow users more choice. A library with a pinned version FORCES the user to install that version too, and is likely to clash with other libraries.
+- [docs/](docs/): The entry document is index.md, but you should write the docs as you see fit.
+- [src/](src/): Update this with your package name.
+- [tests/](tests/): This is where to write your tests. Files must start `test_` to be picked up by tests/
 
 ## Docstrings
 
