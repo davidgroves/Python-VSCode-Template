@@ -1,3 +1,11 @@
+# OUTDATED. SEE REPLACEMENT.
+
+This is out of date, and has been replaced with a similar version which uses ruff rather than flake8 and black.
+
+See [Python-VSCode-Template2](https://github.com/davidgroves/Python-VSCode-Template2).
+
+---
+
 # Overview
 
 This is a highly opininated guide on how to setup VScode for Python Development the way I personally like it, with a baseline Python project the way I also like it.
