@@ -5,6 +5,9 @@ This is out of date, and has been replaced with a similar version which uses ruf
 See [Python-VSCode-Template2](https://github.com/davidgroves/Python-VSCode-Template2).
 
 ---
+---
+---
+---
 
 # Overview
 
