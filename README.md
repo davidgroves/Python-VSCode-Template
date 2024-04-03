@@ -1,9 +1,11 @@
+<span style="color:red">
 # OUTDATED. SEE REPLACEMENT.
 
 This is out of date, and has been replaced with a similar version which uses ruff rather than flake8 and black.
 
 See [Python-VSCode-Template2](https://github.com/davidgroves/Python-VSCode-Template2).
 
+</span>
 ---
 ---
 ---
